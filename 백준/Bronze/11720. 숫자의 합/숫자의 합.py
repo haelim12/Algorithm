@@ -1,6 +1,8 @@
-n = input()
-nums = input()
-total = 0
-for i in nums :
-    total += int(i)  # total= total+int(i)
-print(total)
+N = int(input())
+numbers = list(map(int, input()))
+
+result = 0
+for i in range(N):
+    result += numbers[i]
+
+print(result)
