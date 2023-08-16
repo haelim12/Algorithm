@@ -1,42 +1,38 @@
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		int N = sc.nextInt();
-		int M = sc.nextInt();
-		int L = sc.nextInt();
-		
-		int[] ball = new int[N];
-		int index = 0;
-		ball[index] += 1;
-		int count = 0;
-		
-		while(true) {
-			if(ball[index] == M)
-				break;
+//    public static int count = 0;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-			// 잡은 공이 홀수일 때
-			if (ball[index] % 2 == 1) {
-				index = (index + L) % N;
-				ball[index] += 1;
-				count ++;
-			} 
-			
-			// 잡은 공이 짝수일 때
-			else { 
-				if (index >= L) {
-					index = index - L;
-					ball[index] += 1;
-					count++;
-				} else {
-					index = N+index-L;
-					ball[index] += 1;
-					count++;
-				}
-			}	
-		}
-		System.out.println(count);
-	}
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int L = sc.nextInt();
+        int[] arr = new int[N];
+        int now = 0;
+        arr[now] += 1;
+        int count = 0;
+
+        while (true) {
+            if (arr[now] == M) {
+                break;
+            }
+            if (arr[now] % 2 == 1){ // 공 받은 횟수가 홀수일 때
+                now = (now + L) % N;
+                arr[now]++;
+                count++;
+            } else { // 짝수일 때
+                if (now >= L) {
+                    now = now - L;
+                    arr[now]++;
+                    count++;
+                } else {
+                    now = N + now - L;
+                    arr[now]++;
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+    }
 }
