@@ -7,23 +7,22 @@ public class Main {
 
         int N = sc.nextInt();
         int[] arr = new int[N];
-
         for (int i = 0; i < N; i++) {
             arr[i] = sc.nextInt();
         }
 
         Arrays.sort(arr);
 
-        int total = 0;
-
-        for (int i = 0; i < N; i++) {
-            int sum = 0;
-            for (int j = 0; j < i+1; j++) {
-                sum += arr[j];
-            }
-            total += sum;
+        // 누적합
+        for (int i = 1; i < N; i++) {
+            arr[i] += arr[i-1];
         }
 
-        System.out.println(total);
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        System.out.println(sum);
     }
 }
