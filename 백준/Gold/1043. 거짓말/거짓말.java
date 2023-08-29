@@ -22,7 +22,7 @@ public class Main {
         }
 
         connect = new boolean[N+1][N+1]; // 연결 되는 배열 만들기
-        int[][] party = new int[M][1]; // 파티 배열
+        int[][] party = new int[M][N]; // 파티 배열
         for (int i = 0; i < M; i++) { // 파티수 M번
             int person = sc.nextInt();
             party[i] = new int[person];
