@@ -28,9 +28,7 @@ public class Main {
 					map[i][j] = sc.nextInt();
 				}
 			}
-//			for (int i = 0; i < map.length; i++) {
-//				System.out.println(Arrays.toString(map[i]));
-//			}
+
 			vis = new boolean[N][M];
 			land = 0;
 					
@@ -45,8 +43,6 @@ public class Main {
 	        }
 			System.out.println(land);
 		}
-			
-		
 	}
 	
 	public static void bfs(int i, int j) {
@@ -62,7 +58,7 @@ public class Main {
 				int ni = r + dr[d];
 				int nj = c + dc[d];
 				
-				if (ni >=0 && ni < map.length && nj >= 0 && nj < map[0].length && map[ni][nj] == 1 && !vis[ni][nj]) {
+				if (ni>=0 && ni < map.length && nj >= 0 && nj < map[0].length && map[ni][nj] == 1 && !vis[ni][nj]) {
                     q.offer(new int[] {ni,nj});
                     vis[ni][nj] = true;
                 }
