@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Solution {
 	public static void main(String[] args) throws IOException {
@@ -39,8 +37,8 @@ public class Solution {
 				System.out.print(temp + " ");
 				for (int i = 1; i < V + 1; i++) {
 					if (adjArr[temp][i] == 1) {
-						adjArr[temp][i] = 0; // 간선 제거
-						degree[i]--; // 진입차수 감소
+						adjArr[temp][i] = 0;
+						degree[i]--;
 
 						if (degree[i] == 0)
 							q.add(i);
